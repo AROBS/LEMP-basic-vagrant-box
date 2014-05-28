@@ -1,33 +1,18 @@
 #Requierments:
 
- [Vagrant](http://www.vagrantup.com/) 1.5.0 <=
- 
- [Virtualbox](https://www.virtualbox.org/) 4.2 <=
- 
-[Hostmanager](https://github.com/smdahlen/vagrant-hostmanager)
-```  
-vagrant plugin install vagrant-hostmanager
-```
-[Omnibus](https://github.com/schisamo/vagrant-omnibus)
-```
-vagrant plugin install vagrant-omnibus
-```
-[Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef)
-```
-vagrant plugin install vagrant-librarian-chef
-```
+* [Vagrant](http://www.vagrantup.com/) 1.5.0 <=
+* [Virtualbox](https://www.virtualbox.org/) 4.2 <=
+* [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
+* [Omnibus](https://github.com/schisamo/vagrant-omnibus) `vagrant plugin install vagrant-omnibus`
+* [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef`
 
 
 #Tested 
-Vagrant 1.6
-
-Virtualbox 4.3.13
-
-vagrant-librarian-chef (0.1.5)
-
-vagrant-omnibus (1.4.1)
-
-vagrant-hostmanager (1.4.0)
+* vagrant (1.6)
+* virtualbox (4.3.13)
+* vagrant-librarian-chef (0.1.5)
+* vagrant-omnibus (1.4.1)
+* vagrant-hostmanager (1.4.0)
 
 #Installed software:
 
@@ -42,4 +27,4 @@ vagrant-hostmanager (1.4.0)
 
 #How to use
 
-Place your project in the data dir
+Place your project in the `data` dir
