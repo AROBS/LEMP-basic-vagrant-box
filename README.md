@@ -1,51 +1,17 @@
-# php-nginx-mysql-cookbook
+##Requierments:
 
-TODO: Enter the cookbook description here.
+>= Vagrant 1.5.0
+>= Virtualbox 4.2
 
-## Supported Platforms
+#Vagrant plugins
+* [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager)
+* [Omnibus](https://github.com/schisamo/vagrant-omnibus)
 
-TODO: List your supported platforms.
+##Tested 
+Vagrant 1.6
+Virtualbox 4.3.13
 
-## Attributes
+##Installed software:
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['php-nginx-mysql']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
-
-## Usage
-
-### php-nginx-mysql::default
-
-Include `php-nginx-mysql` in your node's `run_list`:
-
-```json
-{
-  "run_list": [
-    "recipe[php-nginx-mysql::default]"
-  ]
-}
-```
-
-## Contributing
-
-1. Fork the repository on Github
-2. Create a named feature branch (i.e. `add-new-recipe`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request
-
-## License and Authors
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+* Nginx 1.1.19
+* PHP 5.5.12
