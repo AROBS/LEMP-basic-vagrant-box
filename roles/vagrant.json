@@ -22,10 +22,12 @@
   },
   "default_attributes": {},
   "run_list": [
-  	"recipe[apt::default]",
-    "recipe[nginx::default]",
-    "recipe[php::default]",
+    "recipe[apt]",
+    "recipe[app::java7]",
+    "recipe[ant]",
+    "recipe[nginx]",
+    "recipe[php]",
     "recipe[app::install]",
-    "recipe[composer::default]"
+    "recipe[composer]"
   ]
 }
