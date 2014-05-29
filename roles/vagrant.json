@@ -4,29 +4,15 @@
   "json_class": "Chef::Role",
   "description": "vagrant instance, responsible for deploying a vm for a developer",
   "override_attributes": {
-    "box_name": "vagrant",
-    "mysql": {
-      "databases": {
-        "database_name": true,
-        "test_database_name": true
-      },
-      "server_root_password": "bananas",
-      "users": {
-        "user": "password"
-      }
-    },
-    "nginx": {
-      "worker_connections": 768,
-      "keepalive_timeout": 2
-    }
+    "box_name": "vagrant"
   },
-  "default_attributes": {},
   "run_list": [
     "recipe[apt]",
     "recipe[app::java7]",
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
+    "recipe[mysql::server]",
     "recipe[app::install]",
     "recipe[composer]"
   ]
