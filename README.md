@@ -1,7 +1,7 @@
 #Requierments:
 
-* [Vagrant](http://www.vagrantup.com/) 1.5.0 <=
-* [Virtualbox](https://www.virtualbox.org/) 4.2 <=
+* [Vagrant](http://www.vagrantup.com/) >= 1.5.0
+* [Virtualbox](https://www.virtualbox.org/) >= 4.2 
 * [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
 * [Omnibus](https://github.com/schisamo/vagrant-omnibus) `vagrant plugin install vagrant-omnibus`
 * [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef`
@@ -15,7 +15,7 @@
 * vagrant-hostmanager (1.4.0)
 
 #Installed software:
-
+* Ubuntu 12.04
 * Nginx 1.1.19
 * PHP 5.5.12
 
