@@ -25,6 +25,7 @@
   	"recipe[apt::default]",
     "recipe[nginx::default]",
     "recipe[php::default]",
-    "recipe[app::install]"
+    "recipe[app::install]",
+    "recipe[composer::default]"
   ]
 }
