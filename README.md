@@ -15,3 +15,4 @@ Virtualbox 4.3.13
 
 * Nginx 1.1.19
 * PHP 5.5.12
+* mysql 5.5  `mysql -uroot -p123qwe`
