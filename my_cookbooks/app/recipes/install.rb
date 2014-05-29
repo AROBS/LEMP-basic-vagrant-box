@@ -21,5 +21,3 @@ service "nginx" do
   supports [:restart, :reload, :status]
   action [:restart]
 end
-
-include_recipe "app::mysql"

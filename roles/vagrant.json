@@ -6,12 +6,11 @@
   "override_attributes": {
     "box_name": "vagrant"
   },
-  "default_attributes": {},
   "run_list": [
   	"recipe[apt::default]",
     "recipe[nginx::default]",
     "recipe[php::default]",
-    "recipe[app::install]",
-    "recipe[composer::default]"
+    "recipe[mysql::server]",
+    "recipe[app::install]"
   ]
 }
