@@ -19,6 +19,8 @@
 * Nginx 1.1.19
 * PHP 5.5.12
 * composer
+* java7
+* ant
 * mysql 5.5  `mysql -uroot -p123qwe`
 
 #How to install
