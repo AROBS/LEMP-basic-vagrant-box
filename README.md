@@ -18,6 +18,7 @@
 * Ubuntu 12.04
 * Nginx 1.1.19
 * PHP 5.5.12
+* mysql 5.5  `mysql -uroot -p123qwe`
 
 #How to install
 - Set your hostname `config.hostmanager.aliases = %w(test.local)` 
