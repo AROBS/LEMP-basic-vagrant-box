@@ -18,9 +18,7 @@
 * Ubuntu 12.04
 * Nginx 1.1.19
 * PHP 5.5.12
-<<<<<<< HEAD
 * mysql 5.5  `mysql -uroot -p123qwe`
-=======
 
 #How to install
 - Set your hostname `config.hostmanager.aliases = %w(test.local)` 
@@ -31,4 +29,3 @@
 #How to use
 
 Place your project in the `data` dir
->>>>>>> a97e254b562d6ce4e9669df686f7c49c2dcc1c2a
