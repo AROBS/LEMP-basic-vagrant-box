@@ -1,6 +1,6 @@
 
 #Servername what is set for the vagrants hostmanager plugin
-default['app']['servername'] = 'test.local'
+default['app']['servername'] = ''
 default['app']['base_dir'] = '/vagrant_data'
 
 # for apache ant

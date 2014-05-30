@@ -4,7 +4,7 @@
 * [Virtualbox](https://www.virtualbox.org/) >= 4.2 
 * [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
 * [Omnibus](https://github.com/schisamo/vagrant-omnibus) `vagrant plugin install vagrant-omnibus`
-* [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef`
+* [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef` (if this doesent work try `vagrant plugin install vagrant-librarian-chef-nochef`) and if you still have problems delete windows and all your problems fly away.
 
 
 #Tested 

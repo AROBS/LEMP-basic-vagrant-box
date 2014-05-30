@@ -65,6 +65,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.custom_config_path = "Vagrantfile.chef"
     chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
     chef.roles_path = "roles"
-    chef.add_role("vagrant")
+    chef.add_role("dev.local")
   end
 end
