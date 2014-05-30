@@ -4,7 +4,7 @@
 * [Virtualbox](https://www.virtualbox.org/) >= 4.2 
 * [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
 * [Omnibus](https://github.com/schisamo/vagrant-omnibus) `vagrant plugin install vagrant-omnibus`
-* [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef` (if this doesent work try `vagrant plugin install vagrant-librarian-chef-nochef`) and if you still have problems delete windows and all your problems fly away.
+* [Librarian Chef](https://github.com/jimmycuadra/vagrant-librarian-chef) `vagrant plugin install vagrant-librarian-chef` (if this doesent work try `vagrant plugin install vagrant-librarian-chef-nochef`) and if you still have problems delete windows and all your problems will fly away.
 
 
 #Tested 
@@ -24,11 +24,7 @@
 * mysql 5.5  `mysql -uroot -p123qwe`
 
 #How to install
-- Set your hostname `config.hostmanager.aliases = %w(test.local)` 
-- Set the same hostname in *my_cookbooks/app/attributes* `default['app']['servername']`
-- Run `vagrant up`
-- Visit the provided hostname to test
-
-#How to use
-
-Place your project in the `data` dir
+- Place your project in the `data` dir
+- Activate a role in /roles (delete the dist extension and edit the servername attribute.)
+- Run `vagrant up local` or `vagrant up demo` (depends on which role was activated) 
+- Visit the provided hostname to test (default: www.test.local or www.test.demo)

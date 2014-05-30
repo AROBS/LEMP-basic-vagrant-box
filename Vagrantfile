@@ -60,11 +60,32 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  config.vm.define "local" do |local|
+    local.vm.provision :chef_solo do |chef|
+      role = "dev.local"
+      external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+      servername = external["default_attributes"]["app"]["servername"]
+      local.hostmanager.aliases << servername << "www."+servername
+      chef.custom_config_path = "Vagrantfile.chef"
+      chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
+      chef.roles_path = "roles"
+      chef.add_role(role)
+    end
+  end
 
-  config.vm.provision :chef_solo do |chef|
-    chef.custom_config_path = "Vagrantfile.chef"
-    chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
-    chef.roles_path = "roles"
-    chef.add_role("dev.local")
+  config.vm.define "demo" do |demo|
+    demo.vm.provision :chef_solo do |chef|
+      role = "dev.demo"
+      external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+      servername = external["default_attributes"]["app"]["servername"]
+      demo.hostmanager.aliases << servername << "www."+servername
+      chef.custom_config_path = "Vagrantfile.chef"
+      chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
+      chef.roles_path = "roles"
+      chef.add_role(role)
+    end
   end
 end
+
+
+  
