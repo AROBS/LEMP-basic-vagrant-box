@@ -6,14 +6,16 @@
   "override_attributes": {
     "box_name": "vagrant"
   },
+  "default_attributes": {
+    "app" : {
+        "servername" : "test.local"
+      }
+    },
   "run_list": [
-    "recipe[apt]",
-    "recipe[app::java7]",
-    "recipe[ant]",
-    "recipe[nginx]",
-    "recipe[php]",
+  	"recipe[apt::default]",
+    "recipe[nginx::default]",
+    "recipe[php::default]",
     "recipe[mysql::server]",
-    "recipe[app::install]",
-    "recipe[composer]"
+    "recipe[app::install]"
   ]
 }

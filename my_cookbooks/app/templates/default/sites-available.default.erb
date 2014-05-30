@@ -1,7 +1,7 @@
 server {
   listen 80;
-  server_name <%= node['app']['servername'] %>;
-  root /vagrant_data/public;
+  server_name (www\.)?<%= node['app']['servername'] %>;
+  root <%= node['app']['base_dir'] %>/public;
   index index.php index.html index.htm;
 
   	location / {	

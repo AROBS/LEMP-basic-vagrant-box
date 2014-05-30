@@ -1,0 +1,21 @@
+{
+  "name": "vagrant",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "vagrant instance, responsible for deploying a vm for a developer",
+  "override_attributes": {
+    "box_name": "vagrant"
+  },
+  "default_attributes": {
+    "app" : {
+        "servername" : "test.dev"
+      }
+    },
+  "run_list": [
+  	"recipe[apt::default]",
+    "recipe[nginx::default]",
+    "recipe[php::default]",
+    "recipe[mysql::server]",
+    "recipe[app::install]"
+  ]
+}

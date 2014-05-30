@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
-  config.hostmanager.aliases = %w(test.local api.test.local)
+  config.hostmanager.aliases = %w(test.local www.test.local)
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -65,6 +65,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.custom_config_path = "Vagrantfile.chef"
     chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
     chef.roles_path = "roles"
-    chef.add_role("vagrant")
+    chef.add_role("dev.local")
   end
 end
