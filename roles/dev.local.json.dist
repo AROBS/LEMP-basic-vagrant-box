@@ -12,10 +12,13 @@
       }
     },
   "run_list": [
-  	"recipe[apt::default]",
-    "recipe[nginx::default]",
-    "recipe[php::default]",
+    "recipe[apt]",
+    "recipe[app::java7]",
+    "recipe[ant]",
+    "recipe[nginx]",
+    "recipe[php]",
     "recipe[mysql::server]",
-    "recipe[app::install]"
+    "recipe[app::install]",
+    "recipe[composer]"
   ]
 }
