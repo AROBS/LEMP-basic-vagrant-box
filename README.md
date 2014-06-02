@@ -23,6 +23,7 @@
 * ant
 * mysql 5.5  `mysql -uroot -p123qwe`
 * memcached
+* beanstalkd
 
 #How to install
 - Place your project in the `data` dir
