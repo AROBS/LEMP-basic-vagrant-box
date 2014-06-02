@@ -22,6 +22,7 @@
 * java7
 * ant
 * mysql 5.5  `mysql -uroot -p123qwe`
+* memcached
 
 #How to install
 - Place your project in the `data` dir

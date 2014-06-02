@@ -4,7 +4,7 @@
 
 Cheffile.lock
 
-/nbproject
+/nbproject/private/
 tmp
 *~
 /data/composer.phar

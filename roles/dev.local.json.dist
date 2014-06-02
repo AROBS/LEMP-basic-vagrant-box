@@ -16,6 +16,7 @@
     "recipe[nginx::default]",
     "recipe[php::default]",
     "recipe[mysql::server]",
+    "recipe[memcached]",
     "recipe[app::install]"
   ]
 }
