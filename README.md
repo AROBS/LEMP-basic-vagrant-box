@@ -26,6 +26,6 @@
 
 #How to install
 - Place your project in the `data` dir
-- Activate a role in /roles (delete the dist extension and edit the servername attribute.)
-- Run `vagrant up local` or `vagrant up demo` (depends on which role was activated) 
+- Activate the roles in /roles (from the .dist files create the ones without the .dist suffix, change the settings as you want)
+- Run `vagrant up local` or `vagrant up demo` (depends on which role you want to activate) 
 - Visit the provided hostname to test (default: www.test.local or www.test.demo)

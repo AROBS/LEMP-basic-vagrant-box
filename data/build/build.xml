@@ -1,0 +1,12 @@
+<project name="ovistobuild" basedir="..">
+    <property name="build.dir" value="out" />
+    <property name="deploy.dir" value="dest" />
+    <property name="config.profile" value="_" />
+    
+    <target name="composer">
+        <exec executable="php">
+            <arg line="composer.phar install --dev"/>
+        </exec>
+        <echo message="Composer install" level="info" />
+    </target>
+</project>
