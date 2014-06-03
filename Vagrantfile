@@ -64,7 +64,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
     local.vm.provision :chef_solo do |chef|  
       servername = external["default_attributes"]["app"]["servername"]
-      local.hostmanager.aliases << servername << "www."+servername
+      local.hostmanager.aliases = [servername, "www."+servername]
       chef.custom_config_path = "Vagrantfile.chef"
       chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
       chef.roles_path = "roles"
@@ -80,7 +80,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
     demo.vm.provision :chef_solo do |chef|  
       servername = external["default_attributes"]["app"]["servername"]
-      demo.hostmanager.aliases << servername << "www."+servername
+      demo.hostmanager.aliases = [servername, "www."+servername]
       chef.custom_config_path = "Vagrantfile.chef"
       chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
       chef.roles_path = "roles"
