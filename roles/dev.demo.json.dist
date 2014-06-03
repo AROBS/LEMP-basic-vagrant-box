@@ -21,6 +21,7 @@
     "recipe[mysql::server]",
     "recipe[memcached]",
     "recipe[composer]",
+    "recipe[app::liquibase]",
     "recipe[app::install]"
   ]
 }

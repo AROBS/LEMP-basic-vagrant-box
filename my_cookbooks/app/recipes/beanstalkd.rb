@@ -8,6 +8,6 @@ template "/etc/default/beanstalkd" do
   group "root"
 end
 
-service "beanstalkd" do
-  action [:start]
-end
+#service "beanstalkd" do
+#  action [:start]
+#end

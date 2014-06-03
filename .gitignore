@@ -4,9 +4,12 @@
 
 Cheffile.lock
 
-/nbproject/private/
+/nbproject
 tmp
 *~
 /data/composer.phar
 /roles/*
 !/roles/*.dist
+/data/bin/*
+/tmp/
+!*README.md

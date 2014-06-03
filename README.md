@@ -24,6 +24,7 @@
 * mysql 5.5  `mysql -uroot -p123qwe`
 * memcached
 * beanstalkd
+* liquibase 3.2.0
 
 #How to install
 - Place your project in the `data` dir
