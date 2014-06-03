@@ -15,11 +15,14 @@
   "run_list": [
     "recipe[apt]",
     "recipe[app::java7]",
+    "recipe[app::beanstalkd]",
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
     "recipe[mysql::server]",
-    "recipe[app::install]",
-    "recipe[composer]"
+    "recipe[memcached]",
+    "recipe[composer]",
+    "recipe[app::liquibase]",
+    "recipe[app::install]"
   ]
 }
