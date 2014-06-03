@@ -33,7 +33,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.manage_host = true
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
-  config.hostmanager.aliases = %w(test.local www.test.local)
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -61,31 +60,35 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # information on available options.
 
   config.vm.define "local" do |local|
-    local.vm.provision :chef_solo do |chef|
-      role = "dev.local"
-      external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+    role = "dev.local"
+    external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+    local.vm.provision :chef_solo do |chef|  
       servername = external["default_attributes"]["app"]["servername"]
-      local.hostmanager.aliases << servername << "www."+servername
+      local.hostmanager.aliases = [servername, "www."+servername]
       chef.custom_config_path = "Vagrantfile.chef"
       chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
       chef.roles_path = "roles"
       chef.add_role(role)
+    end
+    local.vm.provision "shell" do |s|
+        s.inline = "echo Running composer install...;cd "+external["default_attributes"]["app"]["base_dir"]+"/build;ant deploy_local"
     end
   end
 
   config.vm.define "demo" do |demo|
-    demo.vm.provision :chef_solo do |chef|
-      role = "dev.demo"
-      external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+    role = "dev.demo"
+    external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+    demo.vm.provision :chef_solo do |chef|  
       servername = external["default_attributes"]["app"]["servername"]
-      demo.hostmanager.aliases << servername << "www."+servername
+      demo.hostmanager.aliases = [servername, "www."+servername]
       chef.custom_config_path = "Vagrantfile.chef"
       chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
       chef.roles_path = "roles"
       chef.add_role(role)
     end
+    demo.vm.provision "shell" do |s|
+      s.inline = "echo Running composer install...;cd "+external["default_attributes"]["app"]["base_dir"]+"/build;ant deploy_local"
+    end
   end
 end
 
-
-  

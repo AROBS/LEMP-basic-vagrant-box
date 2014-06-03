@@ -8,7 +8,8 @@
   },
   "default_attributes": {
     "app" : {
-        "servername" : "test.dev"
+        "servername" : "test.dev",
+        "base_dir" : "/vagrant_data"
       }
     },
   "run_list": [

@@ -17,5 +17,3 @@ default['mysql']['allow_remote_root'] = true
 default['liquibase']['url'] = 'http://sourceforge.net/projects/liquibase/files/Liquibase%20Core/liquibase-3.0.8-bin.tar.gz/download'
 default['liquibase']['src_path'] = default['app']['base_dir'] + '/tmp/liquibase.tar.gz'
 default['liquibase']['install_path'] = default['app']['base_dir'] + '/bin/liquibase'
-
-
