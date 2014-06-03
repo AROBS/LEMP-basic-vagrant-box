@@ -9,4 +9,6 @@
         </exec>
         <echo message="Composer install" level="info" />
     </target>
+    
+    <target name="deploy_local" depends="composer"></target>
 </project>
