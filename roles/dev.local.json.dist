@@ -10,19 +10,26 @@
     "app" : {
         "servername" : "test.local",
         "base_dir" : "/vagrant_data"
-      }
-    },
+      },
+    "mysql" :{
+        "database" : "test.local",
+        "server_root_password" : "123qwe",
+        "allow_remote_root" : true
+    }
+  },
   "run_list": [
+    "recipe[database::mysql]",
+    "recipe[mysql-chef_gem]",
     "recipe[apt]",
     "recipe[app::java7]",
     "recipe[app::beanstalkd]",
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
-    "recipe[mysql::server]",
     "recipe[memcached]",
     "recipe[composer]",
-    "recipe[app::liquibase]",
+    "recipe[liquibase]",
+    "recipe[mysql::server]",
     "recipe[app::install]"
   ]
 }
