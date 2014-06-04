@@ -1,0 +1,8 @@
+#! /bin/sh
+sh liquibase --driver=com.mysql.jdbc.Driver \
+     --classpath=mysql-connector-java-5.1.30/mysql-connector-java-5.1.30-bin.jar \
+     --changeLogFile=<%= @install_path %>/changelog/changelog-master.xml \
+     --url="jdbc:mysql://localhost/<%= @database %>" \
+     --username=<%= @database_user %>\
+     --password=<%= @database_password %> \
+     migrate

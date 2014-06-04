@@ -3,12 +3,20 @@
     <property name="deploy.dir" value="dest" />
     <property name="config.profile" value="_" />
     
+    <echo message="ant composer --- Composer install" level="info" />
     <target name="composer">
         <exec executable="php">
             <arg line="composer.phar install --dev"/>
         </exec>
         <echo message="Composer install" level="info" />
     </target>
-    
+
+    <echo message="ant db-migrate-mysql --- Update the database" level="info" />
+    <target name="db-migrate-mysql">
+            <exec executable="sh bin/liquibase/liquibase">
+                <arg line='--driver=com.mysql.jdbc.Driver --classpath=/path/to/classes --changeLogFile=com/example/db.changelog.xml --url="jdbc:mysql://localhost/example\" --username=user --password=asdf migrate'/>
+            </exec>
+            <echo message="Composer install" level="info" />
+    </target>
     <target name="deploy_local" depends="composer"></target>
 </project>

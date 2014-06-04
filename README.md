@@ -31,3 +31,7 @@
 - Activate the roles in /roles (from the .dist files create the ones without the .dist suffix, change the settings as you want)
 - Run `vagrant up local` or `vagrant up demo` (depends on which role you want to activate) 
 - Visit the provided hostname to test (default: www.test.local or www.test.demo)
+
+# More info
+
+- You can change the mysql config in the roles

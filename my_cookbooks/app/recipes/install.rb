@@ -21,3 +21,12 @@ service "nginx" do
   supports [:restart, :reload, :status]
   action [:restart]
 end
+
+include_recipe "mysql-chef_gem"
+include_recipe "database::mysql"
+
+# create a mysql database
+mysql_database "#{node[:mysql][:database]}" do
+  connection ({:host => "localhost", :username => 'root', :password => node['mysql']['server_root_password']})
+  action :create
+end
