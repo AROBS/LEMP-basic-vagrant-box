@@ -3,11 +3,11 @@ package "beanstalkd" do
 end
 
 template "/etc/default/beanstalkd" do
-  source "sites-available.default.erb"
+  source "beanstalkd.erb"
   owner "root"
   group "root"
 end
 
-#service "beanstalkd" do
-#  action [:start]
-#end
+service "beanstalkd" do
+  action [:start]
+end
