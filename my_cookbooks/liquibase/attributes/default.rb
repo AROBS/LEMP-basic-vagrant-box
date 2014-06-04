@@ -1,5 +1,5 @@
 #liquibase
-default['liquibase']['url'] = 'http://sourceforge.net/projects/liquibase/files/Liquibase%20Core/liquibase-3.1.1-bin.tar.gz/download'
+default['liquibase']['url'] = 'http://sourceforge.net/projects/liquibase/files/Liquibase%20Core/liquibase-3.2.0-bin.tar.gz/download'
 default['liquibase']['jdbc_driver_url'] = 'http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.30.tar.gz'
 default['liquibase']['src_path'] = default['app']['base_dir'] + '/tmp/liquibase.tar.gz'
 default['liquibase']['install_path'] = default['app']['base_dir'] + '/bin/liquibase'

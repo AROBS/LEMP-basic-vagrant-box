@@ -13,10 +13,8 @@
 
     <echo message="ant db-migrate-mysql --- Update the database" level="info" />
     <target name="db-migrate-mysql">
-            <exec executable="sh bin/liquibase/liquibase">
-                <arg line='--driver=com.mysql.jdbc.Driver --classpath=/path/to/classes --changeLogFile=com/example/db.changelog.xml --url="jdbc:mysql://localhost/example\" --username=user --password=asdf migrate'/>
-            </exec>
-            <echo message="Composer install" level="info" />
+            <exec executable="sh bin/liquibase/migrate.sh"></exec>
+            <echo message="Migrate Database" level="info" />
     </target>
     <target name="deploy_local" depends="composer"></target>
 </project>

@@ -1,6 +1,6 @@
 include_recipe "app::java7"
 
-if !File.exists?("#{node[:liquibase][:install_path]}")
+if !File.exists?("#{node[:liquibase][:install_path]}/liquibase.jar")
     remote_file node[:liquibase][:src_path] do
       source node[:liquibase][:url]
       path node[:liquibase][:src_path]
@@ -23,8 +23,16 @@ if !File.exists?("#{node[:liquibase][:install_path]}")
       action :create
     end
 
-    template "#{node[:liquibase][:changelog_master_path]}/changelog-master.xml" do
-      source "changelog-master.xml"
+    if !File.exists?("#{node[:liquibase][:changelog_master_path]}/changelog-master.xml")
+      template "#{node[:liquibase][:changelog_master_path]}/changelog-master.xml" do
+        source "changelog-master.xml"
+      end
+    end
+
+    if !File.exists?("#{node[:liquibase][:changelog_master_path]}/init.xml")
+      template "#{node[:liquibase][:changelog_master_path]}/init.xml" do
+        source "init.xml"
+      end
     end
 
     remote_file node[:liquibase][:jdbc_driver_src] do
