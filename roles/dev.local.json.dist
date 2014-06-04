@@ -18,9 +18,10 @@
     }
   },
   "run_list": [
+    "recipe[apt]",
+    "recipe[mysql::server]",
     "recipe[database::mysql]",
     "recipe[mysql-chef_gem]",
-    "recipe[apt]",
     "recipe[app::java7]",
     "recipe[app::beanstalkd]",
     "recipe[ant]",
@@ -29,7 +30,6 @@
     "recipe[memcached]",
     "recipe[composer]",
     "recipe[liquibase]",
-    "recipe[mysql::server]",
     "recipe[app::install]"
   ]
 }
