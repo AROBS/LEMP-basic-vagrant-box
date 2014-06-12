@@ -25,6 +25,7 @@
 * memcached
 * beanstalkd
 * liquibase 3.2.0
+* xdebug ( port: 9001)
 
 #How to install
 - Place your project in the `data` dir
