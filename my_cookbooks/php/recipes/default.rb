@@ -29,7 +29,7 @@ end
 service "php5-fpm" do
   action :nothing
 end
-
+ 
 template "/etc/php5/fpm/pool.d/www.conf" do
   source "www.conf.erb"
   owner "root"
@@ -51,3 +51,5 @@ remote_file node['php']['phpunit']['bin'] do
   action :create
   not_if { ::File.exists?(node['php']['phpunit']['bin']) }
 end
+
+include_recipe "php::xdebug"

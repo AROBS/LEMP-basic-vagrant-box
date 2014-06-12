@@ -28,6 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
   config.vm.network :private_network, ip: "33.33.33.10"
+  config.vm.network "forwarded_port", guest: 9001, host: 9001
 
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
