@@ -28,6 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
   config.vm.network :private_network, ip: "33.33.33.10"
+  # xdebug
   config.vm.network "forwarded_port", guest: 9001, host: 9001
 
   config.hostmanager.enabled = true
@@ -49,30 +50,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider :virtualbox do |vb|
+   config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
   #   vb.gui = true
   #
   #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
+     vb.customize ["modifyvm", :id, "--memory", "2048"]
+   end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  # configuration for local VM provisioning
   config.vm.define "local" do |local|
     role = "dev.local"
-    external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
+    external = JSON.parse(File.read("roles/".concat(role).concat(".json")),{:symbolize_names => true, :allow_nan => true})
     local.vm.provision :chef_solo do |chef|  
-      servername = external["default_attributes"]["app"]["servername"]
+      servername = external[:default_attributes][:app][:servername]
       local.hostmanager.aliases = [servername, "www."+servername]
       chef.custom_config_path = "Vagrantfile.chef"
       chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
       chef.roles_path = "roles"
       chef.add_role(role)
     end
+
     local.vm.provision "shell" do |s|
-        s.inline = "echo Running composer install...;cd "+external["default_attributes"]["app"]["base_dir"]+"/build;ant deploy_local"
+        s.inline = "echo Running composer install...;cd "+external[:default_attributes][:app][:base_dir]+"/build;ant deploy_local"
+        s.inline = "sh /vagrant_data/build/deploy.sh"
     end
   end
 
@@ -89,6 +93,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     demo.vm.provision "shell" do |s|
       s.inline = "echo Running composer install...;cd "+external["default_attributes"]["app"]["base_dir"]+"/build;ant deploy_local"
+    end
+
+    # a shell script to be always run when vagrant starts
+    local.vm.provision "shell", run: "always" do |s|
+    	s.inline = "sh /vagrant_data/startup/startup.sh"
     end
   end
 end
