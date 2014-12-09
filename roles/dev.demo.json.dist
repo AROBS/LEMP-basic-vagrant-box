@@ -27,7 +27,6 @@
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
-    "recipe[memcached]",
     "recipe[composer]",
     "recipe[liquibase]",
     "recipe[app::install]"
