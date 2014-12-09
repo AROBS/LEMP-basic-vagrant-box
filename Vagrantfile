@@ -78,6 +78,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         s.inline = "echo Running composer install...;cd "+external[:default_attributes][:app][:base_dir]+"/build;ant deploy_local"
         s.inline = "sh /vagrant_data/build/deploy.sh"
     end
+
+    # a shell script to be always run when vagrant starts
+    local.vm.provision "shell", run: "always" do |s|
+        s.inline = "sh /vagrant_data/startup/startup.sh"
+    end
   end
 
   # configuration for demo VM provisioning
@@ -96,11 +101,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #      s.inline = "echo Running composer install...;cd "+external[:default_attributes][:app][:base_dir]+"/build;ant deploy_local"
 #      s.inline = "sh /vagrant_data/build/deploy.sh"
 #    end
+#
+#    # a shell script to be always run when vagrant starts
+#    demo.vm.provision "shell", run: "always" do |s|
+#    	s.inline = "sh /vagrant_data/startup/startup.sh"
+#    end
+#  end
 
-    # a shell script to be always run when vagrant starts
-    local.vm.provision "shell", run: "always" do |s|
-    	s.inline = "sh /vagrant_data/startup/startup.sh"
-    end
-  end
 end
+
 
