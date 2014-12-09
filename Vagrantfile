@@ -80,20 +80,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define "demo" do |demo|
-    role = "dev.demo"
-    external = JSON.parse(File.read("roles/".concat(role).concat(".json")))
-    demo.vm.provision :chef_solo do |chef|  
-      servername = external["default_attributes"]["app"]["servername"]
-      demo.hostmanager.aliases = [servername, "www."+servername]
-      chef.custom_config_path = "Vagrantfile.chef"
-      chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
-      chef.roles_path = "roles"
-      chef.add_role(role)
-    end
-    demo.vm.provision "shell" do |s|
-      s.inline = "echo Running composer install...;cd "+external["default_attributes"]["app"]["base_dir"]+"/build;ant deploy_local"
-    end
+  # configuration for demo VM provisioning
+#  config.vm.define "demo" do |demo|
+#    role = "dev.demo"
+#    external = JSON.parse(File.read("roles/".concat(role).concat(".json")),{:symbolize_names => true, :allow_nan => true})
+#    demo.vm.provision :chef_solo do |chef|  
+#      servername = external[:default_attributes][:app][:servername]
+#      demo.hostmanager.aliases = [servername, "www."+servername]
+#      chef.custom_config_path = "Vagrantfile.chef"
+#      chef.cookbooks_path = ["cookbooks", "my_cookbooks"]
+#      chef.roles_path = "roles"
+#      chef.add_role(role)
+#    end
+#    demo.vm.provision "shell" do |s|
+#      s.inline = "echo Running composer install...;cd "+external[:default_attributes][:app][:base_dir]+"/build;ant deploy_local"
+#      s.inline = "sh /vagrant_data/build/deploy.sh"
+#    end
 
     # a shell script to be always run when vagrant starts
     local.vm.provision "shell", run: "always" do |s|
