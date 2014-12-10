@@ -27,6 +27,8 @@
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
+    "recipe[redisio]",
+    "recipe[redisio::enable]",
     "recipe[composer]",
     "recipe[liquibase]",
     "recipe[app::install]"
