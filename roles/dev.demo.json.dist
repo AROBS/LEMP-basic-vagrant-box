@@ -8,15 +8,28 @@
   },
   "default_attributes": {
     "app" : {
-        "servername" : "test.dev",
+        "servername" : "test.dem",
         "base_dir" : "/vagrant_data"
-      },
-        "mysql" :{
-        "database" : "test.dev",
+    },
+    "mysql" : {
+        "database" : "test.dem",
         "server_root_password" : "123qwe",
         "allow_remote_root" : true
-      }
     },
+    "graylog" : {
+        "server": {
+            "graylog2.conf" : {
+                "password_secret" : "arobs123",
+                "root_password_sha2" : "e831171f43ed3e1932f2aa502202e35f7935662429f6f23760025f98a4bad1cb"
+            }
+        },
+        "web_interface" : {
+            "graylog2-web-interface.conf": {
+                "application.secret" : "arobs--123456789"
+            }
+        }
+   }
+  },
   "run_list": [
     "recipe[apt]",
     "recipe[mysql::server]",
@@ -29,6 +42,7 @@
     "recipe[php]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
+    "recipe[graylog::default]",
     "recipe[composer]",
     "recipe[liquibase]",
     "recipe[app::install]"
