@@ -8,11 +8,11 @@
 
 
 #Tested 
-* vagrant (1.6)
-* virtualbox (4.3.13)
-* vagrant-librarian-chef (0.1.5)
-* vagrant-omnibus (1.4.1)
-* vagrant-hostmanager (1.4.0)
+
+ | vagrant | vagrant-librarian-chef | vagrant-omnibus | vagrant-hostmanager | virtualbox | Windows | Ubuntu | Mac |
+ |--------:|-----------------------:|----------------:|--------------------:|-----------:|--------:|-------:|----:|  | 1.6     |        0.1.5           |     1.4.1       |       1.4.0         |  4.3.13    |    8.1  | 14.04  |  Y  |
+ | 1.6.3   |        0.2.0           |     1.4.1       |       1.5.0         |  4.3.10    |     ?   | 14.04  |  ?  |
+ 
 
 #Installed software:
 * Ubuntu 12.04
