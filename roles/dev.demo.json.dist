@@ -16,6 +16,11 @@
         "server_root_password" : "123qwe",
         "allow_remote_root" : true
     },
+    "java" : {
+        "install_flavor" : "openjdk",
+        "jdk_version" : 7,
+        "accept_license_agreement" : true
+    },
     "graylog" : {
         "server": {
             "graylog2.conf" : {
@@ -32,19 +37,20 @@
   },
   "run_list": [
     "recipe[apt]",
+    "recipe[vim]",
     "recipe[mysql::server]",
     "recipe[database::mysql]",
     "recipe[mysql-chef_gem]",
-    "recipe[app::java7]",
     "recipe[app::beanstalkd]",
+    "recipe[java]",
     "recipe[ant]",
     "recipe[nginx]",
     "recipe[php]",
     "recipe[redisio]",
-    "recipe[redisio::enable]",
-    "recipe[graylog::default]",
     "recipe[composer]",
     "recipe[liquibase]",
-    "recipe[app::install]"
+    "recipe[app::install]",
+    "recipe[redisio::enable]",
+    "recipe[graylog::default]"
   ]
 }
