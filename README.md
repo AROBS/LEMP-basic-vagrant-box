@@ -1,5 +1,4 @@
 #Requierments:
-
 * [Vagrant](http://www.vagrantup.com/) >= 1.5.0
 * [Virtualbox](https://www.virtualbox.org/) >= 4.2 
 * [Hostmanager](https://github.com/smdahlen/vagrant-hostmanager) `vagrant plugin install vagrant-hostmanager`
@@ -18,13 +17,15 @@
 * Nginx 1.1.19
 * PHP 5.5.12
 * composer
-* java7
+* java openjdk 7
 * ant
-* mysql 5.5  `mysql -uroot -p123qwe`
-* memcached
+* mysql 5.5  `mysql -u root -p123qwe`
+* redis 2.8.17
+* graylog 2
 * beanstalkd
 * liquibase 3.2.0
 * xdebug ( port: 9001)
+* vim
 
 #How to install
 - Place your project in the `data` dir
@@ -33,5 +34,4 @@
 - Visit the provided hostname to test (default: www.test.local or www.test.demo)
 
 # More info
-
 - You can change the mysql config in the roles
