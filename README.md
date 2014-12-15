@@ -30,8 +30,13 @@
 #How to install
 - Place your project in the `data` dir
 - Activate the roles in /roles (from the .dist files create the ones without the .dist suffix, change the settings as you want)
-- Run `vagrant up local` or `vagrant up demo` (depends on which role you want to activate) 
+- Run `vagrant up local` or `vagrant up demo` (depends on which role you want to activate). *On Windows: cmd -> run as administrator !*
 - Visit the provided hostname to test (default: www.test.local or www.test.demo)
+
+#Greylog2
+url: http://overpass.local:9000
+username: admin
+password: arobs123
 
 # More info
 - You can change the mysql config in the roles
