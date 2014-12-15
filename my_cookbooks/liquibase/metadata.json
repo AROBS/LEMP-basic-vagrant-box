@@ -1,0 +1,31 @@
+{
+  "name": "liquibase",
+  "version": "1.8.0",
+  "description": "Installs and configures liquibase",
+  "long_description": "",
+  "maintainer": "Mihai Mocanu @ AROBS Transilvania Software",
+  "maintainer_email": "mihai.mocanu@arobs.com",
+  "platforms": {
+    "ubuntu": "= 12.10.*"
+  },
+  "dependencies": {
+    "java": "~> 1.29.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "liquibase": "Installs and sets up configuration for liquibase"
+  }
+}

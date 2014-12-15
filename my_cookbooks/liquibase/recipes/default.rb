@@ -1,4 +1,4 @@
-include_recipe "app::java7"
+include_recipe "java"
 
 if !File.exists?("#{node[:liquibase][:install_path]}/liquibase.jar")
     remote_file node[:liquibase][:src_path] do
