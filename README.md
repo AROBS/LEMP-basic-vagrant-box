@@ -10,7 +10,12 @@
 | vagrant | vagrant-librarian-chef | vagrant-omnibus | vagrant-hostmanager | virtualbox | Windows | Ubuntu | Mac |
 |--------:|-----------------------:|----------------:|--------------------:|-----------:|--------:|-------:|----:|
 | 1.6     |        0.1.5           |     1.4.1       |       1.4.0         |  4.3.13    |    8.1  | 14.04  |  Y  |
-| 1.6.3   |        0.2.0           |     1.4.1       |       1.5.0         |  4.3.10    |     ?   | 14.04  |  ?  |
+| 1.6.3   |        0.2.0           |     1.4.1       |       1.5.0         | 4.3.10-16  |    8.1  | 14.04  |  Y  |
+
+#Not working 
+| vagrant | vagrant-librarian-chef | vagrant-omnibus | vagrant-hostmanager | virtualbox | Windows | Ubuntu | Mac |
+|--------:|-----------------------:|----------------:|--------------------:|-----------:|--------:|-------:|----:|
+| >=1.6.5 |    0.2.0 / 0.2.1       |     1.4.1       |       1.5.0         |  4.3.16    |    8.1  | 14.04  |  ?  |
 
 #Installed software:
 * Ubuntu 12.04
