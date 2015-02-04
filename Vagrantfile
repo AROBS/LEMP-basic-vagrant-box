@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # network interface) by any external networks.
   config.vm.network :private_network, ip: "33.33.33.10"
   # xdebug
-  config.vm.network "forwarded_port", guest: 9001, host: 9001
+  # config.vm.network "forwarded_port", guest: 9001, host: 9001
   # graylog2
   config.vm.network "forwarded_port", guest: 9000, host: 9000
 
