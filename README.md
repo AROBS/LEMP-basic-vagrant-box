@@ -39,7 +39,7 @@
 - Visit the provided hostname to test (default: www.test.local or www.test.demo)
 
 #Greylog2
-url: http://overpass.local:9000
+url: http://www.test.local:9000
 username: admin
 password: arobs123
 
