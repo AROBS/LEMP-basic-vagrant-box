@@ -4,6 +4,11 @@ default['php']['phpunit']['url'] = "https://phar.phpunit.de/phpunit.phar"
 default['php']['phpunit']['bin'] = "/usr/local/bin/phpunit"
 default['php']['ext_conf_dir'] = "/etc/php5/fpm/conf.d"
 
+default[:php][:post_max_size]               = '16M'
+default[:php][:file_uploads]                = 'On'
+default[:php][:upload_max_filesize]         = '20M'
+default[:php][:max_file_uploads]            = 20
+
 #xdebug
 
 # XDEBUG.INI OPTIONS

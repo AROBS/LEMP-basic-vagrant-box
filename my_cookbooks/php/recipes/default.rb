@@ -29,6 +29,14 @@ end
 service "php5-fpm" do
   action :nothing
 end
+
+template "#{node['php']['ext_conf_dir']}/00-php.ini" do
+  source "php.ini.erb"
+  owner "root"
+  group "root"
+  mode 0644
+  notifies :restart, resources(:service => "php5-fpm"), :immediately
+end
  
 template "/etc/php5/fpm/pool.d/www.conf" do
   source "www.conf.erb"
