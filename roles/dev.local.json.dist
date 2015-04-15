@@ -51,6 +51,7 @@
     "recipe[liquibase]",
     "recipe[app::install]",
     "recipe[redisio::enable]",
-    "recipe[graylog::default]"
+    "recipe[graylog::default]",
+    "recipe[git]"
   ]
 }
